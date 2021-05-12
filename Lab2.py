@@ -1,7 +1,7 @@
 import math
 import matplotlib.pyplot as plt
 import numpy as np
-from one import *
+from Lab1 import *
 
 fig, ax = plt.subplots()
 x = rect_integral(fn,0,math.pi/4,10000)
