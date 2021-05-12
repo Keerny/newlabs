@@ -2,7 +2,8 @@ import math
 
 # ????
 def fn(x):
-    return math.sin(x)+math.cos(x)
+    # return math.sin(x)+math.cos(x)
+    return x ** 2
 
 # Метод прямоугольников
 def rect_integral(f,xmin,xmax,n):
@@ -54,9 +55,10 @@ def simpsons_( ll, ul, n ):
 
 # Код драйвера
 lower_limit = 0   # Нижний предел
-upper_limit = 2*math.pi # Верхний предел
-n = int(1e4) #Номер интервала
+upper_limit = 2 # Верхний предел
+n = int(1e6) #Номер интервала
 
-print("simpson = {0:.5f}".format(simpsons_(lower_limit, upper_limit, n))) 
-print("rect_integral = {0:.5f}".format(rect_integral(fn, lower_limit,upper_limit, n)))
-print("tr_integral = {0:.5f}".format(tr_integral(fn, lower_limit, upper_limit, n)))
+# print("simpson = {0:.5f}".format(simpsons_(lower_limit, upper_limit, n)))
+# print("rect_integral = {0:.5f}".format(rect_integral(fn, lower_limit,upper_limit, n)))
+# print("tr_integral = {0:.5f}".format(tr_integral(fn, lower_limit, upper_limit, n)))
+
