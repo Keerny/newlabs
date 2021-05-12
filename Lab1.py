@@ -53,7 +53,7 @@ def simpsons_( ll, ul, n ):
     return res    
 
 
-# Код драйвера
+
 lower_limit = 0   # Нижний предел
 upper_limit = 2 # Верхний предел
 n = int(1e6) #Номер интервала
