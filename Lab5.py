@@ -17,7 +17,7 @@ while f > 0.0001: #проверка на разницу
     f = (math.fabs(math.pi - (4 * k / a))) #считаем разницу
     print (4 * k / a) #умножение на 4(полный круг) и деление на общее кол-во точек
     a += 1 #прибавляем к точке
-    i.append(math.fabs(math.pi - (4 * k / a))
+    i.append(math.fabs(math.pi - (4 * k / a), l)
                               
                               
 print (math.pi) #ввод pi из библиотеки питона
