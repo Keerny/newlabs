@@ -51,6 +51,14 @@ if metod == 4:
         n += x
         result_time.append(end-start)
         print(len(newlist))
+        
+fig, ax = plt.subplots()
+plt.plot(result_time, label = 'Time') 
+ax.legend()
 
-plt.plot(result_time) 
-plt.show()
+plt.title('Зависимость роста времени сортировки от размера входного массива')
+plt.xlabel('X')
+plt.ylabel('Y')
+
+
+plt.show() 
