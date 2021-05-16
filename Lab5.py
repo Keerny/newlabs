@@ -17,12 +17,15 @@ while f > 0.0001: #проверка на разницу
     a += 1 #прибавляем к точке
     i.append(math.fabs(math.pi - (4 * k / a)))
                               
-                              
+
 print (math.pi) #ввод pi из библиотеки питона
-                              
-                              
+
+fig, ax = plt.subplots()
+
+plt.xlabel('Кол-во попыток')
+plt.ylabel('Значение')
+                            
 ax.plot(i, label='Pi')
 ax.legend()
-
 
 plt.show()
