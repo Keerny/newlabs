@@ -24,6 +24,7 @@ fig, ax = plt.subplots()
 
 plt.xlabel('Кол-во попыток')
 plt.ylabel('Значение')
+plt.title('График зависимости точности расчета значения интеграла в зависимости от числа испытаний')
                             
 ax.plot(i, label='Pi')
 ax.legend()
