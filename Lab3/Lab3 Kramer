@@ -1,33 +1,38 @@
-from sympy import Matrix, Symbol
+import random
+import numpy
+import numpy as np
 import time
+import matplotlib.pyplot as plt
 
-start = time.time()
+result_time = []
 
-a=Symbol('a')
-b=Symbol('b')
+for n in range (2, 151):
+    start = time.time()
+    myA = []
+    myB = []
+    for i in range(n):
+        myB.append(random.randint(-100, 100))
+        myA.append([])
+        for j in range(n):
+            myA[i].append(random.randint(-100, 100))
+    myB = numpy.array(myB)
+    myA = numpy.array(myA)
+    otvet = numpy.linalg.solve(myA, myB)
+    print(otvet)
+    end = time.time()
+    result_time.append(round(end - start, 5))
+    for i in range(n):
+        print(myA[i])
+    print(myB)
+print (result_time)
 
-A=Matrix([[50, -32], [24,18]])
-B=Matrix([[61, -75], [2,17]])
-C=Matrix([[-3, 5], [-8,3]])
-D=Matrix([a,b])
 
-delta1 = C.copy()
-delta2 = C.copy()
+fig, ax = plt.subplots()
 
-delta1[:,0] = D
-delta2[:,1] = D
+plt.xlabel('Кол-во элементов в матрице')
+plt.ylabel('Время выполнения')
+plt.title('График увеличения времени решения системы')
 
-if C.det() != 0:
-    x = delta1.det()/C.det()
-    y = delta2.det()/C.det()
-    print('\nx =', x, '\ny =', y)
-    x = x.subs(a, A)
-    x = x.subs(b, B)
-    y = y.subs(a, A)
-    y = y.subs(b, B)
-    print('\nx =', x, '\ny =', y)
-else:
-    print('det(C) = 0, решения нет')
-
-end = time.time()
-print(f'Время выполнения - {end - start}')
+ax.plot(np.arange(2, 150+1, 1),result_time,label='time')
+ax.legend()
+plt.show()
